@@ -24,7 +24,7 @@ Don't have a permissions plugin? I recommend [LuckPerms](https://luckperms.net).
 
 ### Like my work? Consider donating! It really helps me out!
 
-**PayPal**
+**PayPal**/n
 [Buy Me a Coffe](https://bmc.link/tailer)
 
 **Crypto**
