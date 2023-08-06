@@ -1,0 +1,23 @@
+name: LuckyTPA
+version: '${project.version}'
+main: me.tailerr.luckytpa.LuckyTPA
+api-version: 1.20
+prefix: LuckyTPA
+load: STARTUP
+authors: [ tailerr ]
+description: Simple yet customizable TPA plugin
+website: https://github.com/IAmTailerr/LuckyTPA
+
+commands:
+  tpa:
+    description: Send a teleport request to another player
+    usage: /<command>
+  tpahere:
+    description: Send a teleport request for another player to teleport to you
+    usage: /<command>
+  tpaccept:
+    description: Accept an incoming teleport request
+    usage: /<command>
+  tpdeny:
+    description: Deny an incoming teleport request
+    usage: /<command>
