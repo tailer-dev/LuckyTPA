@@ -4,6 +4,7 @@ permissions:
   tpdeny: luckytpa.tpdeny
   tp: luckytpa.tp
   tphere: luckytpa.tphere
+  bypass-delay: luckytpa.bypassdelay
 
 
 settings:

@@ -22,6 +22,7 @@ public class Utils {
     public String tpdenyPermission;
     public String tpPermission;
     public String tpherePermission;
+    public String bypassDelay;
 
     public String acceptButton;
     public String denyButton;
@@ -71,6 +72,7 @@ public class Utils {
         tpdenyPermission = configFile.getString("permissions.tpdeny");
         tpPermission = configFile.getString("permissions.tp");
         tpherePermission = configFile.getString("permissions.tphere");
+        bypassDelay = configFile.getString("permissions.bypass-delay");
 
         acceptText = new TextComponent(acceptButton);
         acceptText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tpaccept"));

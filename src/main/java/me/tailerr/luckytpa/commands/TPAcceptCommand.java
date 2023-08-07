@@ -41,7 +41,7 @@ public class TPAcceptCommand implements CommandExecutor {
                     if (playerToTeleport == null) {
                         player.sendMessage(utils.playerOffline);
                     } else {
-                        if (utils.timerEnabled && !player.hasPermission("")) {
+                        if (utils.timerEnabled && !playerToTeleport.hasPermission(utils.bypassDelay)) {
                             playerToTeleport.sendMessage(utils.playerAcceptedTimer.replace("%player%", player.getName()).replace("%time%", String.valueOf(utils.timeDelay)));
 
                             new BukkitRunnable() {
@@ -59,14 +59,14 @@ public class TPAcceptCommand implements CommandExecutor {
                     utils.tpaList.remove(player.getUniqueId());
                 } else if (utils.tpaHereList.containsKey(player.getUniqueId())) {
 
-                    Player playerToTeleportToo = Bukkit.getPlayer(utils.tpaList.get(player.getUniqueId()));
+                    Player playerToTeleportToo = Bukkit.getPlayer(utils.tpaHereList.get(player.getUniqueId()));
 
                     player.sendMessage(utils.youAccepted);
 
                     if (playerToTeleportToo == null) {
                         player.sendMessage(utils.playerOffline);
                     } else {
-                        if (utils.timerEnabled) {
+                        if (utils.timerEnabled && !player.hasPermission(utils.bypassDelay)) {
                             player.sendMessage(utils.playerAcceptedTimer.replace("%player%", player.getName()).replace("%time%", String.valueOf(utils.timeDelay)));
 
                             new BukkitRunnable() {
