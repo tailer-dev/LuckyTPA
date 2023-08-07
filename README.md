@@ -4,23 +4,32 @@
 This is a basic plugin to use teleporting, you can request to teleport or you can simply teleport to the player without needing to ask.
 
 ### Commands
-**TPA** will allow you to send a request to teleport to another player
-> /tpa [player]
+> **TPA** will allow you to send a request to teleport to another player 
+/tpa [player]
 
-**TPAHERE** will allow you to send a request to teleport another player to you
-> /tpahere [player]
+> **TPAHERE** will allow you to send a request to teleport another player to you
+/tpahere [player]
 
-**TPACCEPT** will allow you to accept an incoming teleport request
-> /tpaccept
+> **TPACCEPT** will allow you to accept an incoming teleport request
+/tpaccept
 
-**TPDENY** will allow you to deny an incoming teleport request
-> /tpdeny
+>**TPDENY** will allow you to deny an incoming teleport request
+/tpdeny
 
-**TP** will allow you to directly teleport to a player without requesting
-> /tp
+> **TP** will allow you to directly teleport to a player without requesting
+/tp
 
-**TPHERE** will allow you to directly teleport a player to you without requesting
-> /tphere
+> **TPHERE** will allow you to directly teleport a player to you without requesting
+/tphere
+
+### Permissions
+
+> /tpa - luckytpa.tpa
+/tpaccept - luckytpa.tpaccept
+/tpdeny - luckytpa.tpdeny
+/tp - luckytpa.tp
+/tphere - luckytpa.tphere
+Bypass Delay - luckytpa.bypassdelay
 
 ### How to install
 Simply just drag & drop the plugin into your plugins folder. Use the permissions at the top of **config.yml** to give your players the correct permissions.
