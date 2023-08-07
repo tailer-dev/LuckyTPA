@@ -34,8 +34,6 @@ Don't have a permissions plugin? I recommend [LuckPerms](https://luckperms.net).
 
 ### Like my work? Consider donating! It really helps me out!
 
-**PayPal**
-
 [Buy Me a Pizza](https://bmc.link/tailer)
 
 **Crypto**
