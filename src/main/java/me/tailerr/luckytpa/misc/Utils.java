@@ -35,9 +35,15 @@ public class Utils {
     public String teleportHereSent;
     public String teleportHereRecieved;
 
+    public String tpaUsage;
+    public String tpaHereUsage;
+    public String tpUsage;
+    public String tpHereUsage;
+
     public String tpMessage;
     public String tpHereMessage;
 
+    public String cantTeleportToSelf;
     public HashMap<UUID, UUID> tpaList = new HashMap<>();
     public HashMap<UUID, UUID> tpaHereList = new HashMap<>();
 
@@ -66,6 +72,12 @@ public class Utils {
         teleportHereRecieved = color(configFile.getString("messages.received-tpahere"));
         tpMessage = color(configFile.getString("messages.tp-msg"));
         tpHereMessage = color(configFile.getString("messages.tphere-msg"));
+        cantTeleportToSelf = color(configFile.getString("messages.cant-tp-to-self"));
+
+        tpaUsage = color(configFile.getString("usage-messages.tpa"));
+        tpaHereUsage = color(configFile.getString("usage-messages.tpahere"));
+        tpUsage = color(configFile.getString("usage-messages.tp"));
+        tpHereUsage = color(configFile.getString("usage-messages.tphere"));
 
         tpaPermission = configFile.getString("permissions.tpa");
         tpacceptPermission = configFile.getString("permissions.tpaccept");

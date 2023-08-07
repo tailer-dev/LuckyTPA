@@ -26,14 +26,28 @@ public class TPHereCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if (player.hasPermission(utils.tpherePermission)) {
+
+                if (args.length < 1) {
+                    player.sendMessage(utils.tpHereUsage);
+                    return true;
+                }
+
                 Player playerToTeleportTo = Bukkit.getPlayer(args[0]);
                 if (playerToTeleportTo == null) {
                     player.sendMessage(utils.playerOffline);
                 } else {
+
+                    if (player.getUniqueId().equals(playerToTeleportTo.getUniqueId())) {
+                        player.sendMessage(utils.cantTeleportToSelf);
+                        return true;
+                    }
+
                     player.sendMessage(utils.tpHereMessage.replace("%player%", playerToTeleportTo.getName()));
                     playerToTeleportTo.teleport(player.getLocation());
                 }
 
+            } else {
+                player.sendMessage(utils.noPermissionMessage);
             }
 
         }

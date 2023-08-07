@@ -26,14 +26,28 @@ public class TPCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if (player.hasPermission(utils.tpPermission)) {
+
+                if (args.length < 1) {
+                    player.sendMessage(utils.tpUsage);
+                    return true;
+                }
+
                 Player playerToTeleportTo = Bukkit.getPlayer(args[0]);
                 if (playerToTeleportTo == null) {
                     player.sendMessage(utils.playerOffline);
                 } else {
+
+                    if (player.getUniqueId().equals(playerToTeleportTo.getUniqueId())) {
+                        player.sendMessage(utils.cantTeleportToSelf);
+                        return true;
+                    }
+
                     player.sendMessage(utils.tpMessage.replace("%player%", playerToTeleportTo.getName()));
                     player.teleport(playerToTeleportTo.getLocation());
                 }
 
+            } else {
+                player.sendMessage(utils.noPermissionMessage);
             }
 
         }
