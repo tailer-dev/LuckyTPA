@@ -1,9 +1,6 @@
 package me.tailerr.luckytpa;
 
-import me.tailerr.luckytpa.commands.TPACommand;
-import me.tailerr.luckytpa.commands.TPAcceptCommand;
-import me.tailerr.luckytpa.commands.TPCommand;
-import me.tailerr.luckytpa.commands.TPHereCommand;
+import me.tailerr.luckytpa.commands.*;
 import me.tailerr.luckytpa.misc.Utils;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,6 +18,7 @@ public final class LuckyTPA extends JavaPlugin {
         getCommand("tpaccept").setExecutor(new TPAcceptCommand(utils, this));
         getCommand("tp").setExecutor(new TPCommand(utils));
         getCommand("tphere").setExecutor(new TPHereCommand(utils));
+        getCommand("tpdeny").setExecutor(new TPDenyCommand(utils));
 
     }
 

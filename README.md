@@ -13,7 +13,7 @@ This is a basic plugin to use teleporting, you can request to teleport or you ca
 **TPACCEPT** will allow you to accept an incoming teleport request
 > /tpaccept
 
-**TPADENY** will allow you to deny an incoming teleport request
+**TPDENY** will allow you to deny an incoming teleport request
 > /tpdeny
 
 **TP** will allow you to directly teleport to a player without requesting
