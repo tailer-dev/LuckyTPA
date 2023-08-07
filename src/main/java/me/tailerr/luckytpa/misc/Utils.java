@@ -63,7 +63,7 @@ public class Utils {
         playerDenied = color(configFile.getString("messages.player-denied"));
         playerAcceptedTimer = color(configFile.getString("messages.player-accepted-timer"));
         teleportHereSent = color(configFile.getString("messages.sent-tpahere"));
-        teleportHereRecieved = color(configFile.getString("messages.recieved-tpahere"));
+        teleportHereRecieved = color(configFile.getString("messages.received-tpahere"));
         tpMessage = color(configFile.getString("messages.tp-msg"));
         tpHereMessage = color(configFile.getString("messages.tphere-msg"));
 

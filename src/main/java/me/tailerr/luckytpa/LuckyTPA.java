@@ -11,8 +11,8 @@ public final class LuckyTPA extends JavaPlugin {
 
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
-
         Utils utils = new Utils(getConfig());
+
 
         getCommand("tpa").setExecutor(new TPACommand(utils));
         getCommand("tpaccept").setExecutor(new TPAcceptCommand(utils, this));
