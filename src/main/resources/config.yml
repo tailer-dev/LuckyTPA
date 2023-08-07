@@ -1,7 +1,9 @@
 permissions:
-  tpa: luckytpa.tpa
+  tpa: luckytpa.tpa # This goes for /tpahere too
   tpaccept: luckytpa.tpaccept
   tpdeny: luckytpa.tpdeny
+  tp: luckytpa.tp
+  tphere: luckytpa.tphere
 
 
 settings:
@@ -11,6 +13,8 @@ settings:
 messages:
   sent-tpa: "&c&lLuckyTPA &7» &fYou have requested to teleport to &b%player%"
   received-tpa: "&c&lLuckyTPA &7» &fYou have received a teleport request from &b%player%"
+  sent-tpahere: "&c&lLuckyTPA &7» &fYou have requested to teleport &b%player% &fto you"
+  received-tpahere: "&c&lLuckyTPA &7» &fYou have received a teleport request from &b%player% &fto teleport to you"
   accept: "&a&l[ACCEPT]"
   deny: "&c&l[DENY]"
   no-permission: "&c&lLuckyTPA &7» &cYou don't have permission to run this command!"
@@ -22,3 +26,5 @@ messages:
   player-accepted-timer: "&c&lLuckyTPA &7» &b%player% &fhas &aaccepted your request, teleporting in &c%time% &fseconds"
   you-denied: "&c&lLuckyTPA &7» &fYou have &cdenied &fthe teleport request"
   player-denied: "&c&lLuckyTPA &7» &b%player% &fhas &cdenied your request"
+  tp-msg: "&c&lLuckyTPA &7» &fYou have teleported to &b%player%"
+  tphere-msg: "&c&lLuckyTPA &7» &fYou have teleported &b%player% &fto you"

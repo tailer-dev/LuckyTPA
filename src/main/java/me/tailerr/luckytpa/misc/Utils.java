@@ -20,6 +20,8 @@ public class Utils {
     public String tpaPermission;
     public String tpacceptPermission;
     public String tpdenyPermission;
+    public String tpPermission;
+    public String tpherePermission;
 
     public String acceptButton;
     public String denyButton;
@@ -29,6 +31,11 @@ public class Utils {
     public String youDenied;
     public String playerDenied;
     public String playerAcceptedTimer;
+    public String teleportHereSent;
+    public String teleportHereRecieved;
+
+    public String tpMessage;
+    public String tpHereMessage;
 
     public HashMap<UUID, UUID> tpaList = new HashMap<>();
     public HashMap<UUID, UUID> tpaHereList = new HashMap<>();
@@ -54,10 +61,16 @@ public class Utils {
         playerAccepted = color(configFile.getString("messages.player-accepted"));
         playerDenied = color(configFile.getString("messages.player-denied"));
         playerAcceptedTimer = color(configFile.getString("messages.player-accepted-timer"));
+        teleportHereSent = color(configFile.getString("messages.sent-tpahere"));
+        teleportHereRecieved = color(configFile.getString("messages.recieved-tpahere"));
+        tpMessage = color(configFile.getString("messages.tp-msg"));
+        tpHereMessage = color(configFile.getString("messages.tphere-msg"));
 
         tpaPermission = configFile.getString("permissions.tpa");
         tpacceptPermission = configFile.getString("permissions.tpaccept");
         tpdenyPermission = configFile.getString("permissions.tpdeny");
+        tpPermission = configFile.getString("permissions.tp");
+        tpherePermission = configFile.getString("permissions.tphere");
 
         acceptText = new TextComponent(acceptButton);
         acceptText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tpaccept"));

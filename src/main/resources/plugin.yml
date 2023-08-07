@@ -21,3 +21,9 @@ commands:
   tpdeny:
     description: Deny an incoming teleport request
     usage: /<command>
+  tp:
+    description: Force teleport to a player
+    usage: /<command>
+  tphere:
+    description: Force teleport a player to you
+    usage: /<command>

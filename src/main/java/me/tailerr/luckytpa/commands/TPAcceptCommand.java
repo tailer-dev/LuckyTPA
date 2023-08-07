@@ -38,25 +38,52 @@ public class TPAcceptCommand implements CommandExecutor {
                     Player playerToTeleport = Bukkit.getPlayer(utils.tpaList.get(player.getUniqueId()));
                     player.sendMessage(utils.youAccepted);
 
-                    if (utils.timerEnabled) {
-                        playerToTeleport.sendMessage(utils.playerAcceptedTimer.replace("%player%", player.getName()).replace("%time%", String.valueOf(utils.timeDelay)));
-
-                        new BukkitRunnable() {
-                            @Override
-                            public void run() {
-                                playerToTeleport.teleport(player.getLocation());
-                            }
-                        }.runTaskLater(luckyTPA, 20 * utils.timeDelay);
-
+                    if (playerToTeleport == null) {
+                        player.sendMessage(utils.playerOffline);
                     } else {
-                        playerToTeleport.sendMessage(utils.playerAccepted.replace("%player%", player.getName()));
-                        playerToTeleport.teleport(player.getLocation());
-                    }
+                        if (utils.timerEnabled && !player.hasPermission("")) {
+                            playerToTeleport.sendMessage(utils.playerAcceptedTimer.replace("%player%", player.getName()).replace("%time%", String.valueOf(utils.timeDelay)));
 
+                            new BukkitRunnable() {
+                                @Override
+                                public void run() {
+                                    playerToTeleport.teleport(player.getLocation());
+                                }
+                            }.runTaskLater(luckyTPA, 20L * utils.timeDelay);
+
+                        } else {
+                            playerToTeleport.sendMessage(utils.playerAccepted.replace("%player%", player.getName()));
+                            playerToTeleport.teleport(player.getLocation());
+                        }
+                    }
+                    utils.tpaList.remove(player.getUniqueId());
                 } else if (utils.tpaHereList.containsKey(player.getUniqueId())) {
 
+                    Player playerToTeleportToo = Bukkit.getPlayer(utils.tpaList.get(player.getUniqueId()));
+
+                    player.sendMessage(utils.youAccepted);
+
+                    if (playerToTeleportToo == null) {
+                        player.sendMessage(utils.playerOffline);
+                    } else {
+                        if (utils.timerEnabled) {
+                            player.sendMessage(utils.playerAcceptedTimer.replace("%player%", player.getName()).replace("%time%", String.valueOf(utils.timeDelay)));
+
+                            new BukkitRunnable() {
+                                @Override
+                                public void run() {
+                                    player.teleport(playerToTeleportToo.getLocation());
+                                }
+                            }.runTaskLater(luckyTPA, 20L * utils.timeDelay);
+
+                        } else {
+                            player.sendMessage(utils.playerAccepted.replace("%player%", player.getName()));
+                            player.teleport(playerToTeleportToo.getLocation());
+                        }
+                    }
 
 
+                    utils.tpaHereList.remove(player.getUniqueId());
                 } else {
                     player.sendMessage(utils.noRequests);
                 }
