@@ -11,7 +11,7 @@ public final class LuckyTPA extends JavaPlugin {
 
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
-        Utils utils = new Utils(getConfig());
+        Utils utils = new Utils(getConfig(), this);
 
 
         TPACommand tpaCommand = new TPACommand(utils);

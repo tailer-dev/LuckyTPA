@@ -6,10 +6,11 @@ permissions:
   tphere: luckytpa.tphere
   bypass-delay: luckytpa.bypassdelay
 
-
 settings:
   time-delay: false
   time-to-teleport: 5 # This is in seconds
+  cooldown: 30 # This is in seconds
+  cooldown-msg: "&c&lLuckyTPA &7» &fYou are sending too many requests!"
 
 messages:
   sent-tpa: "&c&lLuckyTPA &7» &fYou have requested to teleport to &b%player%"

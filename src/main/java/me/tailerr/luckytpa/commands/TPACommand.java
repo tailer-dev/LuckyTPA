@@ -48,6 +48,11 @@ public class TPACommand implements CommandExecutor {
                         return true;
                     }
 
+                    if (utils.cooldownUUIDs.contains(player.getUniqueId())) {
+                        player.sendMessage(utils.cooldownMsg);
+                        return true;
+                    }
+
                     utils.tpaList.remove(secondPlayer.getUniqueId());
                     utils.tpaHereList.remove(player.getUniqueId());
 
@@ -63,7 +68,8 @@ public class TPACommand implements CommandExecutor {
                     componentBuilder.append(utils.denyText);
 
                     secondPlayer.spigot().sendMessage(componentBuilder.create());
-
+                    utils.cooldownUUIDs.add(player.getUniqueId());
+                    utils.removeCooldown(player);
                 }
 
             } else {
@@ -98,6 +104,11 @@ public class TPACommand implements CommandExecutor {
                         return true;
                     }
 
+                    if (utils.cooldownUUIDs.contains(player.getUniqueId())) {
+                        player.sendMessage(utils.cooldownMsg);
+                        return true;
+                    }
+
                     utils.tpaList.remove(secondPlayer.getUniqueId());
                     utils.tpaHereList.remove(player.getUniqueId());
 
@@ -114,6 +125,8 @@ public class TPACommand implements CommandExecutor {
 
 
                     secondPlayer.spigot().sendMessage(componentBuilder.create());
+                    utils.cooldownUUIDs.add(player.getUniqueId());
+                    utils.removeCooldown(player);
 
                 }
 

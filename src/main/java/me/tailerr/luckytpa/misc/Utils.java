@@ -1,15 +1,19 @@
 package me.tailerr.luckytpa.misc;
 
+import me.tailerr.luckytpa.LuckyTPA;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class Utils {
-
 
     public String noPermissionMessage;
     public String teleportSent;
@@ -46,14 +50,21 @@ public class Utils {
     public String cantTeleportToSelf;
     public HashMap<UUID, UUID> tpaList = new HashMap<>();
     public HashMap<UUID, UUID> tpaHereList = new HashMap<>();
+    public List<UUID> cooldownUUIDs = new ArrayList<>();
 
     public TextComponent acceptText;
     public TextComponent denyText;
 
     public boolean timerEnabled;
     public int timeDelay;
+    public int cooldownDelay;
+    public String cooldownMsg;
 
-    public Utils(FileConfiguration configFile) {
+    LuckyTPA luckyTPA;
+
+    public Utils(FileConfiguration configFile, LuckyTPA luckyTPA) {
+
+        this.luckyTPA = luckyTPA;
 
         noPermissionMessage = color(configFile.getString("messages.no-permission"));
         teleportSent = color(configFile.getString("messages.sent-tpa"));
@@ -94,6 +105,20 @@ public class Utils {
 
         timerEnabled = configFile.getBoolean("settings.time-delay");
         timeDelay = configFile.getInt("settings.time-to-teleport");
+
+        cooldownDelay = configFile.getInt("settings.cooldown");
+        cooldownMsg = color(configFile.getString("settings.cooldown-msg"));
+
+    }
+
+    public void removeCooldown(Player player) {
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                cooldownUUIDs.remove(player.getUniqueId());
+            }
+        }.runTaskLater(luckyTPA, 20L * cooldownDelay);
 
     }
 
