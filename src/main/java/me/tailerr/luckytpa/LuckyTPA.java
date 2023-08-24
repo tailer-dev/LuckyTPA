@@ -1,18 +1,19 @@
 package me.tailerr.luckytpa;
 
 import me.tailerr.luckytpa.commands.*;
+import me.tailerr.luckytpa.misc.DeveloperDetection;
 import me.tailerr.luckytpa.misc.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class LuckyTPA extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        Metrics metrics = new Metrics(this, 19635);
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
         Utils utils = new Utils(getConfig(), this);
-
 
         TPACommand tpaCommand = new TPACommand(utils);
 
@@ -22,6 +23,8 @@ public final class LuckyTPA extends JavaPlugin {
         getCommand("tp").setExecutor(new TPCommand(utils));
         getCommand("tphere").setExecutor(new TPHereCommand(utils));
         getCommand("tpdeny").setExecutor(new TPDenyCommand(utils));
+
+        Bukkit.getPluginManager().registerEvents(new DeveloperDetection(), this);
 
     }
 

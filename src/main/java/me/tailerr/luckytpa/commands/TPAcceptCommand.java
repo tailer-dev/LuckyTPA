@@ -3,6 +3,7 @@ package me.tailerr.luckytpa.commands;
 import me.tailerr.luckytpa.LuckyTPA;
 import me.tailerr.luckytpa.misc.Utils;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -48,12 +49,14 @@ public class TPAcceptCommand implements CommandExecutor {
                                 @Override
                                 public void run() {
                                     playerToTeleport.teleport(player.getLocation());
+                                    playerToTeleport.playSound(playerToTeleport, Sound.ENTITY_ENDERMAN_TELEPORT, 0.1f, 0.1f);
                                 }
                             }.runTaskLater(luckyTPA, 20L * utils.timeDelay);
 
                         } else {
                             playerToTeleport.sendMessage(utils.playerAccepted.replace("%player%", player.getName()));
                             playerToTeleport.teleport(player.getLocation());
+                            playerToTeleport.playSound(playerToTeleport, Sound.ENTITY_ENDERMAN_TELEPORT, 0.1f, 0.1f);
                         }
                     }
                     utils.tpaList.remove(player.getUniqueId());
@@ -73,12 +76,14 @@ public class TPAcceptCommand implements CommandExecutor {
                                 @Override
                                 public void run() {
                                     player.teleport(playerToTeleportToo.getLocation());
+                                    player.playSound(player, Sound.ENTITY_ENDERMAN_TELEPORT, 0.1f, 0.1f);
                                 }
                             }.runTaskLater(luckyTPA, 20L * utils.timeDelay);
 
                         } else {
                             player.sendMessage(utils.playerAccepted.replace("%player%", player.getName()));
                             player.teleport(playerToTeleportToo.getLocation());
+                            player.playSound(player, Sound.ENTITY_ENDERMAN_TELEPORT, 0.1f, 0.1f);
                         }
                     }
 

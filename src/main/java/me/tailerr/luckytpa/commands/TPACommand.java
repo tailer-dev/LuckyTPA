@@ -1,10 +1,7 @@
 package me.tailerr.luckytpa.commands;
 
 import me.tailerr.luckytpa.misc.Utils;
-import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,6 +15,7 @@ public class TPACommand implements CommandExecutor {
     public TPACommand(Utils utils) {
         this.utils = utils;
     }
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
