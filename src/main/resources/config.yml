@@ -4,6 +4,7 @@ permissions:
   tpdeny: luckytpa.tpdeny
   tp: luckytpa.tp
   tphere: luckytpa.tphere
+  tppos: luckytpa.tppos
   bypass-delay: luckytpa.bypassdelay
 
 settings:
@@ -31,9 +32,11 @@ messages:
   tp-msg: "&c&lLuckyTPA &7» &fYou have teleported to &b%player%"
   tphere-msg: "&c&lLuckyTPA &7» &fYou have teleported &b%player% &fto you"
   cant-tp-to-self: "&c&lLuckyTPA &7» &cSilly! You can't teleport to yourself"
+  tppos: "&c&lLuckyTPA &7» &fYou have teleported to &6%x% %y% %z%&f."
 
 usage-messages:
   tpa: "&c&lLuckyTPA &7» &6/tpa [name]"
   tpahere: "&c&lLuckyTPA &7» &6/tpahere [name]"
   tp: "&c&lLuckyTPA &7» &6/tp [name]"
   tphere: "&c&lLuckyTPA &7» &6/tphere [name]"
+  tppos: "&c&lLuckyTPA &7» &6/tppos [x] [y] [z]"

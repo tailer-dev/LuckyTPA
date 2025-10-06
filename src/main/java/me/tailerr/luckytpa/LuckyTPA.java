@@ -8,9 +8,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class LuckyTPA extends JavaPlugin {
 
+    Metrics metrics;
+
     @Override
     public void onEnable() {
-        Metrics metrics = new Metrics(this, 19635);
+        metrics = new Metrics(this, 19635);
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
         Utils utils = new Utils(getConfig(), this);
@@ -31,7 +33,7 @@ public final class LuckyTPA extends JavaPlugin {
     @Override
     public void onDisable() {
 
-
+        metrics.shutdown();
 
     }
 

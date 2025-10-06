@@ -26,6 +26,7 @@ public class Utils {
     public String tpdenyPermission;
     public String tpPermission;
     public String tpherePermission;
+    public String tpposPermission;
     public String bypassDelay;
 
     public String acceptButton;
@@ -46,6 +47,9 @@ public class Utils {
 
     public String tpMessage;
     public String tpHereMessage;
+
+    public String tpPos;
+    public String tpPosUsage;
 
     public String cantTeleportToSelf;
     public HashMap<UUID, UUID> tpaList = new HashMap<>();
@@ -90,12 +94,16 @@ public class Utils {
         tpUsage = color(configFile.getString("usage-messages.tp"));
         tpHereUsage = color(configFile.getString("usage-messages.tphere"));
 
+        tpPos = color(configFile.getString("messages.tppos"));
+        tpPosUsage = color(configFile.getString("usage-messages.tppos"));
+
         tpaPermission = configFile.getString("permissions.tpa");
         tpacceptPermission = configFile.getString("permissions.tpaccept");
         tpdenyPermission = configFile.getString("permissions.tpdeny");
         tpPermission = configFile.getString("permissions.tp");
         tpherePermission = configFile.getString("permissions.tphere");
         bypassDelay = configFile.getString("permissions.bypass-delay");
+        tpposPermission = configFile.getString("permissions.tppos");
 
         acceptText = new TextComponent(acceptButton);
         acceptText.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tpaccept"));
