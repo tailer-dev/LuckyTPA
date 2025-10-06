@@ -13,19 +13,23 @@ This is a basic plugin to use teleporting, you can request to teleport or you ca
 
 > /tphere [player]
 
+> /tppos [x] [y] [z]
+
 ### Permissions
 
->/tpa - luckytpa.tpa
+> /tpa - luckytpa.tpa
 
->/tpaccept - luckytpa.tpaccept
+> /tpaccept - luckytpa.tpaccept
 
->/tpdeny - luckytpa.tpdeny
+> /tpdeny - luckytpa.tpdeny
 
->/tp - luckytpa.tp
+> /tp - luckytpa.tp
 
->/tphere - luckytpa.tphere
+> /tphere - luckytpa.tphere
 
->Bypass Delay - luckytpa.bypassdelay
+> /tppos - luckytpa.tppos
+
+> Bypass Delay - luckytpa.bypassdelay
 
 ### How to install
 Simply just drag & drop the plugin into your plugins folder. Use the permissions at the top of **config.yml** to give your players the correct permissions.
