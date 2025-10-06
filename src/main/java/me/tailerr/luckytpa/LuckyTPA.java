@@ -25,6 +25,7 @@ public final class LuckyTPA extends JavaPlugin {
         getCommand("tp").setExecutor(new TPCommand(utils));
         getCommand("tphere").setExecutor(new TPHereCommand(utils));
         getCommand("tpdeny").setExecutor(new TPDenyCommand(utils));
+        getCommand("tppos").setExecutor(new TPPosCommand(utils));
 
         Bukkit.getPluginManager().registerEvents(new DeveloperDetection(), this);
 

@@ -27,3 +27,6 @@ commands:
   tphere:
     description: Force teleport a player to you
     usage: /<command>
+  tppos:
+    description: Force teleport yourself to a position
+    usage: /<command>
